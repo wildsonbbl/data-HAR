@@ -4,6 +4,7 @@ author: "Wildson B B Lima"
 date: "19/10/2020"
 output: html_document
 ---
+
 Feature Selection (from the raw [UCI HAR Dataset](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones))
 =================
 
