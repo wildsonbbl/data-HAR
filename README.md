@@ -16,6 +16,4 @@ The tidy dataset includes the following files:
 
 * 'run_analysis.R': R script to make the tidy datasets  
 
-* 'theharset/theharset.csv': Column separated file with tidy data containing the means and standard deviations from the variables of interest described in the 'CodeBook.md' file 
-
-* 'theharset/averages': folder containing tidy data csv files with the mean of each variable of interest grouped by subject and activity. The name of the file is the name of the variable of interest.
+* 'tidyhra.txt': Column separated file with tidy data containing the means and standard deviations from the variables of interest described in the 'CodeBook.md' file 

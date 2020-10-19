@@ -1,3 +1,4 @@
+library(dplyr)
 #First, look for variable names of the data of interest
 features <- read.table(file = './UCI HAR Dataset/features.txt',
                        col.names = c('columnnumber','variable'))
@@ -51,25 +52,11 @@ changelabes <- function(label){
 #changing the labels in the har set
 theharset$activity <- sapply(X = theharset$activity,FUN = changelabes )
 
+#grouping results and taking the mean
+tidyhra <- theharset %>% group_by(subject,activity)  %>% 
+  summarise_each(funs = mean,)
 
-#checking to see if destination directory exists and creating it if it doesn't
-if(!dir.exists('./theharset')){
-  dir.create('./theharset')
-}
 
 #storing the har set in a nice and beautiful csv file
-write.csv(x = theharset,file = './theharset/theharset.csv',row.names = F)
+write.table(x = tidyhra,file = './tidyhra.txt',row.names = F)
 
-#checking to see if destination directory exists and creating it if it doesn't
-if(!dir.exists('./theharset/averages')){
-  dir.create('./theharset/averages')
-}
-#creating tables for each variable mean in subgroups subject and activity 
-for(i in features[ofinterest,]$variable){
-  temphar <- tapply(X = theharset[,i], 
-                    INDEX = list(theharset$subject,theharset$activity), 
-                    FUN = mean,simplify = T)
-  temphar<-as.data.frame(cbind(subject = row.names(temphar),temphar))
-  filepath <- paste0('./theharset/averages/',i,'.csv')
-  write.csv(x = temphar,file = filepath,row.names = F)
-}
