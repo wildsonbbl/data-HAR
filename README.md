@@ -9,11 +9,13 @@ Analysis
 ====
 **Downloaded UCI HAR Dataset [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) **   
 
-The script has the following flow:  
+The tidy dataset includes the following files:  
+=========================================  
 
-* Looks for the variable names of interest in the `features.txt` file, that is the means and standard deviations   
-* Load and bind train and test set with proper column names  
-* Select the variables of interest from previously bind dataset
-* Uses a function to make activity names more descriptive  
-* Stores the tidy dataset in a csv file  
-* Creates and stores new datasets with the mean of each variable of interest grouped by subject and activity
+* 'CodeBook.md' and 'CodeBook.html': Shows information about the variables used  
+
+* 'run_analysis.R': R script to make the tidy datasets  
+
+* 'theharset/theharset.csv': Column separated file with tidy data containing the means and standard deviations from the variables of interest described in the 'CodeBook.md' file 
+
+* 'theharset/averages': folder containing tidy data csv files with the mean of each variable of interest grouped by subject and activity. The name of the file is the name of the variable of interest.

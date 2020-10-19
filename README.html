@@ -381,18 +381,14 @@ summary {
 <div id="analysis" class="section level1">
 <h1>Analysis</h1>
 <p><strong>Downloaded UCI HAR Dataset <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">here</a> </strong></p>
-<p>The script has the following flow:</p>
+</div>
+<div id="the-tidy-dataset-includes-the-following-files" class="section level1">
+<h1>The tidy dataset includes the following files:</h1>
 <ul>
-<li>Looks for the variable names of interest in the <code>features.txt</code> file, that is the means and standard deviations<br />
-</li>
-<li>Load and bind train and test set with proper column names<br />
-</li>
-<li>Select the variables of interest from previously bind dataset</li>
-<li>Uses a function to make activity names more descriptive<br />
-</li>
-<li>Stores the tidy dataset in a csv file<br />
-</li>
-<li>Creates and stores new datasets with the mean of each variable of interest grouped by subject and activity</li>
+<li><p>‘CodeBook.md’ and ‘CodeBook.html’: Shows information about the variables used</p></li>
+<li><p>‘run_analysis.R’: R script to make the tidy datasets</p></li>
+<li><p>‘theharset/theharset.csv’: Column separated file with tidy data containing the means and standard deviations from the variables of interest described in the ‘CodeBook.md’ file</p></li>
+<li><p>‘theharset/averages’: folder containing tidy data csv files with the mean of each variable of interest grouped by subject and activity. The name of the file is the name of the variable of interest.</p></li>
 </ul>
 </div>
 

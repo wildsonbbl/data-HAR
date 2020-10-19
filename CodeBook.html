@@ -380,7 +380,6 @@ summary {
 
 <div id="feature-selection-from-the-raw-uci-har-dataset" class="section level1">
 <h1>Feature Selection (from the raw <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI HAR Dataset</a>)</h1>
-<p><strong>Downloaded UCI HAR Dataset <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">here</a> </strong></p>
 <p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix ‘t’ to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz.</p>
 <p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag).</p>
 <p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the ‘f’ to indicate frequency domain signals).</p>
@@ -431,6 +430,19 @@ tBodyGyroJerkMean</p>
 <div id="feature-selection-for-the-resulted-tidy-dataset" class="section level1">
 <h1>Feature Selection (for the resulted tidy dataset)</h1>
 <p>The features selected for the tidy dataset are the resulted mean() and std() variables that were estimated as described above in the raw dataset.</p>
+<p>The script for this has the following flow:</p>
+<ul>
+<li>Looks for the variable names of interest in the <code>features.txt</code> file, which is the means and standard deviations estimated<br />
+</li>
+<li>Load and bind train and test set with proper column names<br />
+</li>
+<li>Select the variables of interest from previously bind dataset</li>
+<li>Uses a function to make activity names more descriptive<br />
+</li>
+<li>Stores the tidy dataset in a csv file<br />
+</li>
+<li>Creates and stores new datasets with the mean of each variable of interest grouped by subject and activity</li>
+</ul>
 </div>
 
 

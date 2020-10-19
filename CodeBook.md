@@ -66,4 +66,13 @@ tBodyGyroJerkMean
 Feature Selection (for the resulted tidy dataset)
 =================  
   
-The features selected for the tidy dataset are the resulted mean() and std() variables that were estimated as described above in the raw dataset.
+The features selected for the tidy dataset are the resulted mean() and std() variables that were estimated as described above in the raw dataset.  
+
+The script for this has the following flow:  
+
+* Looks for the variable names of interest in the `features.txt` file, which is the means and standard deviations estimated  
+* Load and bind train and test set with proper column names  
+* Select the variables of interest from previously bind dataset
+* Uses a function to make activity names more descriptive  
+* Stores the tidy dataset in a csv file  
+* Creates and stores new datasets with the mean of each variable of interest grouped by subject and activity
